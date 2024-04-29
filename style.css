@@ -1,24 +1,28 @@
-
-
-body,textarea,button{
+body,
+textarea,
+button {
   font-family: "Lexend Deca", sans-serif;
   font-size: 1rem;
   font-style: normal;
   background-color: rgba(243, 245, 252, 1);
 }
 
+.texto {
+  font-size: 1.7rem;
+  height: 80%;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  resize: none;
+  outline: none;
+}
 
 .inout-container {
   height: 80vh;
-  margin: 5rem;
+  margin: 2rem;
   padding: 20px;
-  display: flex;
-  flex-direction: row;
-
-}
-
-.bar {
-  flex-grow: 1;
+  display: grid;
+  grid-template-columns: 1fr 12fr 8fr;
 }
 
 .bar img {
@@ -27,37 +31,19 @@ body,textarea,button{
 
 .inout {
   margin: 1rem;
-  padding: 4rem;
-}
-
-.inputs {
-  align-items: center;
-  flex-grow: 8;
-}
-
-.outputs {
-  background-color: white;
-  border-radius: 1rem;
-  flex-grow: 2;
-}
-
-.texto {
-  font-size: 1.3rem;
-  height: 90%;
-  width: 100%;
-  background-color: rgba(255, 255, 255, 0);
-  border: none;
-  resize: none;
-  outline: none;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .texto--input,
-.texto--input::placeholder{
-  color: #0A3871;
+.texto--input::placeholder {
+  color: #0a3871;
 }
 
-.texto--output{
-  color:#495057;
+.texto--output {
+  color: #495057;
 }
 
 .botones {
@@ -68,18 +54,26 @@ body,textarea,button{
 }
 
 .btn {
-  height: 90%;
   padding: 1rem;
   flex-grow: 1;
   border-radius: 1rem;
-  border: 2px solid #0A3871;
+  border: 2px solid #0a3871;
   background-color: #ffffff00;
-  color:#0A3871 ;
+  color: #0a3871;
 }
 
-.btn--1{
-  background-color: #0A3871;
-  color: #E0E6ED;
+.btn:active {
+  background-color: #dcdcdcad;
+  transition: background-color 0.3s ease;
+}
+
+.btn--1 {
+  background-color: #0a3871;
+  color: #e0e6ed;
+}
+
+.btn--1:active {
+  background-color: #0a3871bf;
 }
 
 .restriction {
@@ -95,15 +89,42 @@ body,textarea,button{
   padding: 0 5px 0 0;
 }
 
-.outputs--none{
+.outputs {
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 3px 3px 20px 0px rgb(192, 192, 192);
+}
+
+.outputs > div {
+  width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
+}
+
+.output--true {
+  justify-content: space-between;
+}
+
+.output--false {
   justify-content: center;
 }
 
-.outputs--none p{
-  font-size: 2rem;
-  color: #343A40;
+.output--false img {
+  max-width: 80%;
+  margin: 0 auto;
+}
+.output--false p {
+  text-align: center;
+  font-size: 1rem;
+  padding-top: 1rem;
+}
+
+#no--text {
+  font-size: 1.5rem;
+}
+
+.invisible {
+  display: none !important;
 }
 

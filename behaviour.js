@@ -11,14 +11,42 @@ const outputText = document.querySelector(".texto--output");
 const btnEncriptar = document.querySelector(".btn--1");
 const btnDesencriptar = document.querySelector(".btn--2");
 const btnCopiar = document.querySelector(".btn--3");
+const divOutputsTrue = document.querySelector(".output--true");
+const divOutputsFalse = document.querySelector(".output--false");
 
-inputText.addEventListener("input", function () {
-  outputText.value = "";
+divOutputsTrue.classList.add("invisible");
+
+const validInputMessage = function (state) {
+  if (!state) {
+    divOutputsFalse.classList.remove("invisible");
+    divOutputsTrue.classList.add("invisible");
+  } else {
+    divOutputsFalse.classList.add("invisible");
+    divOutputsTrue.classList.remove("invisible");
+  }
+};
+
+const validarInput = function (inputText) {
+  validInputMessage(Boolean(inputText));
+  return Boolean(inputText);
+};
+
+inputText.addEventListener("input", function(){
+  validInputMessage(false)
 });
 
 btnEncriptar.addEventListener("click", function () {
   const texto = inputText.value;
-  encriptar(texto);
+  if (validarInput(texto)) {
+    encriptar(texto);
+  }
+});
+
+btnDesencriptar.addEventListener("click", function () {
+  const texto = inputText.value;
+  if (validarInput(texto)) {
+    desencriptar(texto);
+  }
 });
 
 btnCopiar.addEventListener("click", function () {
@@ -34,11 +62,6 @@ const encriptar = function (text) {
   textEnc = textEnc.join("");
   outputText.value = textEnc;
 };
-
-btnDesencriptar.addEventListener("click", function () {
-  const texto = inputText.value;
-  desencriptar(texto);
-});
 
 const desencriptar = function (text) {
   let textDesenc = text.toLowerCase();
