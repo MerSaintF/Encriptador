@@ -1,0 +1,109 @@
+
+
+body,textarea,button{
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  background-color: rgba(243, 245, 252, 1);
+}
+
+
+.inout-container {
+  height: 80vh;
+  margin: 5rem;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+
+}
+
+.bar {
+  flex-grow: 1;
+}
+
+.bar img {
+  max-width: 120px;
+}
+
+.inout {
+  margin: 1rem;
+  padding: 4rem;
+}
+
+.inputs {
+  align-items: center;
+  flex-grow: 8;
+}
+
+.outputs {
+  background-color: white;
+  border-radius: 1rem;
+  flex-grow: 2;
+}
+
+.texto {
+  font-size: 1.3rem;
+  height: 90%;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  resize: none;
+  outline: none;
+}
+
+.texto--input,
+.texto--input::placeholder{
+  color: #0A3871;
+}
+
+.texto--output{
+  color:#495057;
+}
+
+.botones {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.btn {
+  height: 90%;
+  padding: 1rem;
+  flex-grow: 1;
+  border-radius: 1rem;
+  border: 2px solid #0A3871;
+  background-color: #ffffff00;
+  color:#0A3871 ;
+}
+
+.btn--1{
+  background-color: #0A3871;
+  color: #E0E6ED;
+}
+
+.restriction {
+  display: flex;
+  align-items: center;
+  font-size: 0.8rem;
+  padding: 0.5rem;
+  color: #75787b;
+}
+
+.restriction img {
+  height: 1rem;
+  padding: 0 5px 0 0;
+}
+
+.outputs--none{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.outputs--none p{
+  font-size: 2rem;
+  color: #343A40;
+}
+
